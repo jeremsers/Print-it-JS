@@ -22,6 +22,7 @@ const slides = [
 ]
 
 changerPoints();
+changerImage();
 
 arrow_right.addEventListener("click", function () {
 	
@@ -41,10 +42,16 @@ arrow_left.addEventListener("click", function () {
 });
 
 function changerImage() {
-	const currentImage = document.querySelector(".banner-img");
-	const tagLine = document.querySelector("#banner p");
+
+	const parentElement = document.querySelector('.banner-div');
+	parentElement.innerHTML = ""
+	const currentImage = document.createElement("img");
+	currentImage.className = "banner-img"
+	const tagLine = document.createElement('p')
 	currentImage.src = `./assets/images/slideshow/${slides[imageSelector].image}`;
-	tagLine.innerHtml = slides[imageSelector].tagLine;
+	tagLine.innerHTML = slides[imageSelector].tagLine;
+	parentElement.appendChild(currentImage)
+	parentElement.appendChild(tagLine)
 	
 };
 
