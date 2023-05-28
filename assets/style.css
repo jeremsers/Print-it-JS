@@ -110,6 +110,8 @@ header {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
+	flex-wrap: nowrap;
 }
 
 .banner-div {
@@ -118,8 +120,39 @@ header {
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+	
 	min-height: 470px;
 	position: relative;
+	flex-shrink: 0;
+	
+}
+
+.animation-div{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	
+	min-height: 470px;
+	flex-shrink: 0;
+}
+.reset{
+	transform: translateX(100%);
+}
+
+.reset-img{
+	transform: translateX(0);
+}
+.animation-img{
+	transform: translateX(-100%);
+	transition: all 2000ms;
+}
+
+.animation-principal{
+	transform: translateX(0);
+	transition: all 2000ms;
 }
 
 .banner-img {
