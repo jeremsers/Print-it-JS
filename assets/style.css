@@ -138,22 +138,42 @@ header {
 	min-height: 470px;
 	flex-shrink: 0;
 }
-.reset{
+.reset-currentimgR{
 	transform: translateX(100%);
 }
 
-.reset-img{
+.reset-animimgR{
 	transform: translateX(0);
 }
-.animation-img{
+.animation-animimgR{
 	transform: translateX(-100%);
 	transition: all 2000ms;
 }
 
-.animation-principal{
+.animation-currentimgR{
 	transform: translateX(0);
 	transition: all 2000ms;
 }
+
+
+.reset-currentimgL{
+	transform: translateX(-100%);
+}
+
+.reset-animimgL{
+	transform: translateX(0);
+}
+.animation-animimgL{
+	transform: translateX(100%);
+	transition: all 2000ms;
+}
+
+.animation-currentimgL{
+	transform: translateX(0);
+	transition: all 2000ms;
+}
+
+
 
 .banner-img {
 	position: absolute;

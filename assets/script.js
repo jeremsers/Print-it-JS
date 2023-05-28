@@ -2,7 +2,7 @@ const arrow_left = document.querySelector(".arrow_left");
 const arrow_right = document.querySelector(".arrow_right");
 
 let imageSelector = 0;
-let animimageSelector = 1;
+let animimageSelector = 0;
 const slides = [
 	{
 		"image":"slide1.jpg",
@@ -23,59 +23,92 @@ const slides = [
 ]
 
 changerPoints();
-changerImage();
+chargerImage();
 
 arrow_right.addEventListener("click", function () {
 	
+	animimageSelector = imageSelector
 	imageSelector===slides.length-1 ? imageSelector = 0 : imageSelector ++;
-	animimageSelector === slides.length-1 ? animimageSelector = 0 : animimageSelector ++;
+	
 
-	changerImage();
+	chargerImage();
+	changerAnimImageRight();
 	changerPoints();
 	
 });
 arrow_left.addEventListener("click", function () {
 
+	animimageSelector = imageSelector
 	imageSelector === 0 ? imageSelector = slides.length-1 : imageSelector --;
-	animimageSelector === 0 ? animimageSelector = slides.length-1 : animimageSelector --;
+	
 
-	changerImage();
+	chargerImage();
+	changerAnimImageLeft();
 	changerPoints();
 	
 });
 
-function changerImage() {
-	const parentElementAnim = document.querySelector('.animation-div')
-	parentElementAnim.className = "animation-div reset-img"
+
+function chargerImage() {
 	const parentElement = document.querySelector('.banner-div');
-	parentElement.className ="reset banner-div"
-	void parentElementAnim.offsetWidth;
 	parentElement.innerHTML = ""
-	parentElementAnim.innerHTML = ""
 	const currentImage = document.createElement("img");
 	currentImage.className = "banner-img"
 	const tagLine = document.createElement('p')
-	currentImage.src = `./assets/images/slideshow/${slides[animimageSelector].image}`;
-	tagLine.innerHTML = slides[animimageSelector].tagLine;
+	currentImage.src = `./assets/images/slideshow/${slides[imageSelector].image}`;
+	tagLine.innerHTML = slides[imageSelector].tagLine;
+	parentElement.appendChild(currentImage)
+	parentElement.appendChild(tagLine)
+	
+	
+};
+
+
+function changerAnimImageRight() {
+	const parentElementAnim = document.querySelector('.animation-div')
+	parentElementAnim.className = "animation-div reset-animimgR"
+	const parentElement = document.querySelector('.banner-div');
+	parentElement.className ="reset-currentimgR banner-div"
+	void parentElementAnim.offsetWidth;
+	parentElementAnim.innerHTML = ""
 	const animImage = document.createElement("img");
 	animImage.className = "banner-img"
 	const animtagLine = document.createElement('p')
-	animImage.src = `./assets/images/slideshow/${slides[imageSelector].image}`;
-	animtagLine.innerHTML = slides[imageSelector].tagLine;
-	parentElement.appendChild(currentImage)
-	parentElement.appendChild(tagLine)
+	animImage.src = `./assets/images/slideshow/${slides[animimageSelector].image}`;
+	animtagLine.innerHTML = slides[animimageSelector].tagLine;
 	parentElementAnim.appendChild(animImage)
 	parentElementAnim.appendChild(animtagLine)
-	parentElementAnim.className = "animation-img animation-div"
-	parentElement.className ="animation-principal banner-div"
+	parentElementAnim.className = "animation-animimgR animation-div"
+	parentElement.className ="animation-currentimgR banner-div"
 	
 };
+
+function changerAnimImageLeft() {
+	const parentElementAnim = document.querySelector('.animation-div')
+	parentElementAnim.className = "animation-div reset-animimgL"
+	const parentElement = document.querySelector('.banner-div');
+	parentElement.className ="reset-currentimgL banner-div"
+	void parentElementAnim.offsetWidth;
+	parentElementAnim.innerHTML = ""
+	const animImage = document.createElement("img");
+	animImage.className = "banner-img"
+	const animtagLine = document.createElement('p')
+	animImage.src = `./assets/images/slideshow/${slides[animimageSelector].image}`;
+	animtagLine.innerHTML = slides[animimageSelector].tagLine;
+	parentElementAnim.appendChild(animImage)
+	parentElementAnim.appendChild(animtagLine)
+	parentElementAnim.className = "animation-animimgL animation-div"
+	parentElement.className ="animation-currentimgL banner-div"
+	
+};
+
+
 
 function changerPoints() {
 	const parentElement = document.querySelector(".dots");
 	parentElement.innerHTML = "";
 	for (let i = 0; i < slides.length; i++) {
-		if (animimageSelector === i){
+		if (imageSelector === i){
 			const sliderElement = document.createElement("span");
 			sliderElement.className = "dot dot_selected";
 			parentElement.appendChild(sliderElement);
