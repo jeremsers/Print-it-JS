@@ -22,8 +22,8 @@ const slides = [
 	}
 ]
 
-changerPoints();
 chargerImage();
+changerPoints();
 
 arrow_right.addEventListener("click", function () {
 	
@@ -122,3 +122,47 @@ function changerPoints() {
 	}
 
 };
+
+
+
+/*************Animation Products */
+
+
+
+
+window.addEventListener("scroll", function(){
+	animateProduct();
+	animateQuestion();
+
+
+})
+
+
+
+
+function animateProduct() {
+	const productImg = document.querySelector('.products-img');
+	const productTitle = document.querySelector('.products-title')
+	const productText = document.querySelector('.products-text');
+	const ElementRect = productImg.getBoundingClientRect(); 
+	if (ElementRect.top <= 817) {
+
+		productImg.classList.add('products-img-anim')
+		productTitle.classList.add('products-title-anim')
+		productText.classList.add('products-text-anim')
+	}
+}
+
+function animateQuestion() {
+	const ElementTitle = document.querySelector('.question-title');
+	const ElementText = document.querySelector('.question-text')
+	const ElementBtn = document.querySelector('.question-btn');
+	const ElementRect = ElementTitle.getBoundingClientRect(); 
+	console.log(ElementRect.top)
+	if (ElementRect.top <= 884) {
+
+		ElementTitle.classList.add('question-title-anim')
+		ElementText.classList.add('question-text-anim')
+		ElementBtn.classList.add('question-btn-anim')
+	}
+}

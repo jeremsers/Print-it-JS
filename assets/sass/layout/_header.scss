@@ -1,0 +1,12 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.logo{
+	width: 260px;
+	margin-block: 10px;
+}

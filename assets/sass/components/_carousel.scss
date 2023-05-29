@@ -1,0 +1,123 @@
+#banner {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	flex-wrap: nowrap;
+}
+
+.banner-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	
+	min-height: 470px;
+	position: relative;
+	flex-shrink: 0;
+	
+}
+
+.animation-div{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	
+	min-height: 470px;
+	flex-shrink: 0;
+}
+.reset-currentimgR{
+	transform: translateX(100%);
+}
+
+.reset-animimgR{
+	transform: translateX(0);
+}
+.animation-animimgR{
+	transform: translateX(-100%);
+	transition: all 2000ms;
+}
+
+.animation-currentimgR{
+	transform: translateX(0);
+	transition: all 2000ms;
+}
+
+
+.reset-currentimgL{
+	transform: translateX(-100%);
+}
+
+.reset-animimgL{
+	transform: translateX(0);
+}
+.animation-animimgL{
+	transform: translateX(100%);
+	transition: all 2000ms;
+}
+
+.animation-currentimgL{
+	transform: translateX(0);
+	transition: all 2000ms;
+}
+
+
+
+.banner-img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	object-fit: cover;
+	object-position: center;
+}
+/* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
+/* Gestion des fleches du carrousel */
+#banner .arrow {
+	position: absolute;
+}
+#banner .arrow_left {
+	left: 10px;
+}
+#banner .arrow_right {
+	right: 10px;
+}
+/* Gestion des points du carrousel */
+.dots {
+	position: absolute;
+	bottom: 40px;
+	display: flex;
+}
+.dot {
+	margin-inline: 5px;
+	width: 13px;
+	height: 13px;
+	background-color: #ffffff00;
+	border: 3px solid #fff;
+	border-radius: 100%;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);;
+}
+.dot_selected {
+	background-color: #fff;
+}
+/* Fin du code CSS pour le carousel */
+#banner p {
+	font-family: 'Roboto Slab', sans-serif;
+	font-weight: 900;
+	font-size: 50px;
+	line-height: 66px;
+	color: white;
+	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	text-align: center;
+}
+#banner span {
+	display: block;
+	font-weight: 400;
+	font-size: 30px;
+}

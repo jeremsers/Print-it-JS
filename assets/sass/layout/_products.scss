@@ -1,0 +1,44 @@
+
+#products {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: row-reverse;
+	& div{
+		flex:1;
+		padding: 0 6em;
+	}
+	& aside {
+		flex: 1;
+	}
+	& h2{
+		margin-top: 0;
+	}
+}
+
+.products-img{
+	opacity: 0;
+	
+	&-anim{
+
+	animation: rightShift 700ms;
+	animation-fill-mode: forwards;
+}
+}
+
+.products-title{
+	opacity: 0;
+	&-anim{
+		animation: upShift 400ms;
+		animation-fill-mode: forwards;
+		animation-delay: 300ms;
+	}
+}
+
+.products-text{
+	opacity: 0;
+	&-anim{
+		animation: upShift 400ms;
+		@include ff;
+		animation-delay: 500ms;
+	}
+}

@@ -1,0 +1,23 @@
+
+#why-us {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+#why-us > div{
+	display: flex;
+	justify-content: space-evenly;
+}
+#why-us article {
+	max-width: 320px;
+	display: flex;
+	flex-direction: column;
+}
+#why-us img {
+	width: 33%;
+	height: 150px;
+	text-align: center;
+	margin-inline: auto;
+	margin-block: 0;
+	object-fit: contain;
+}
