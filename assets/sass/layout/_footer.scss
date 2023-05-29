@@ -2,31 +2,37 @@
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
 
-
 .inline-icon {
 	vertical-align: middle;
 }
-footer {
-	background-color: #28363D;
+.footer {
+	background-color: #28363d;
+	position:static;
 	color: white;
 	display: flex;
 	padding-block: 3em;
 	justify-content: space-evenly;
 	font-size: 12px;
 	align-items: center;
+	
+	overflow: hidden;
+	& div {
+		position: relative;
+	}
+	&-logo {
+		background-color: white;
+		max-width: 308px;
+		padding: 10px;
+	}
+	&-contact {
+		margin-bottom: 1em;
+		font-weight: 700;
+		font-size: 16px;
+	}
 }
-footer div {
 
-	position: relative;
-}
-.footer-logo {
-	background-color: white;
-	max-width: 308px;
-	padding: 10px;
-}
-.footer-contact {
-	margin-bottom: 1em;
-	font-weight: 700;
-	font-size: 16px;
-
-}
+/* .footer-anim{
+	transition: all 2000ms;
+	padding-block: 3em;
+	height: 192px;
+} */

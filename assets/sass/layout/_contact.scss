@@ -1,34 +1,71 @@
-.bg-lightblue{
-	background-color: #E6F4FB;
+.bg-lightblue {
+	background-color: #e6f4fb;
 }
 #contact {
 	margin-bottom: 0;
-}
-#contact article, #contact div {
-	flex:1;
-}
-
-
-#contact .container {
-	flex-direction: row;
-	display: flex;
-	padding: 6em ;
-}
-
-#contact .container > div > div {
-	display: flex;
-	padding-bottom: 20px;
-}
-
-#contact h3 {
-	margin-top: 0;
-	background: url("./images/tricolor-icon.png") no-repeat left top;
-	padding-left:1.5em;
-	width: 200px;
-}
-
-@media all and (max-width: 1250px) {
-	#contact > article {
-		flex: 2;
+	& article {
+		flex: 1;
+		@media all and (max-width: 1250px) {
+			flex: 2;
+		}
 	}
+	& div {
+		flex: 1;
+	}
+	& .container {
+		flex-direction: row;
+		display: flex;
+		padding: 6em;
+		& > div > div {
+			display: flex;
+			padding-bottom: 20px;
+		}
+	}
+	& h3 {
+		margin-top: 0;
+		background: url("./images/tricolor-icon.png") no-repeat left top;
+		padding-left: 1.5em;
+		width: 200px;
+	}
+}
+
+.contact-img{
+	opacity: 0;
+	
+	&-anim{
+
+	animation: leftShift 700ms;
+	animation-fill-mode: forwards;
+}
+}
+
+.contact-title{
+	opacity: 0;
+	&-anim{
+		animation: upShift 400ms;
+		animation-fill-mode: forwards;
+		animation-delay: 300ms;
+	}
+}
+
+.contact-div{
+	opacity: 0;
+	&-anim{
+		animation: upShift 400ms;
+		@include ff;
+		
+		&:nth-child(2){
+			animation-delay: 800ms;
+	
+		}
+		&:nth-child(3){
+			animation-delay: 900ms;
+			
+		}
+		&:nth-child(4){
+			animation-delay: 1000ms;
+			
+		}
+	}
+	
 }

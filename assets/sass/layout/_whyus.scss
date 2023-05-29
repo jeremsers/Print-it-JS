@@ -3,21 +3,52 @@
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-}
-#why-us > div{
+	& > div{
 	display: flex;
 	justify-content: space-evenly;
-}
-#why-us article {
-	max-width: 320px;
+	}
+	& article{
+		max-width: 320px;
 	display: flex;
 	flex-direction: column;
 }
-#why-us img {
-	width: 33%;
-	height: 150px;
-	text-align: center;
-	margin-inline: auto;
-	margin-block: 0;
-	object-fit: contain;
-}
+	& img{
+			width: 33%;
+		height: 150px;
+		text-align: center;
+		margin-inline: auto;
+		margin-block: 0;
+		object-fit: contain;
+		}
+	}
+
+	
+	.whyus-title{
+		opacity: 0;
+		&-anim{
+			animation: upShift 400ms;
+			animation-fill-mode: forwards;
+			animation-delay: 300ms;
+		}
+	}
+	
+	.whyus-article{
+		opacity: 0;
+		&-anim{
+			animation: icon-scale 1200ms;
+			
+			@include ff;
+		}
+		&:nth-child(1){
+			animation-delay: 800ms;
+
+		}
+		&:nth-child(2){
+			animation-delay: 900ms;
+			
+		}
+		&:nth-child(3){
+			animation-delay: 1000ms;
+			
+		}
+	}

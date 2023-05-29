@@ -133,6 +133,9 @@ function changerPoints() {
 window.addEventListener("scroll", function(){
 	animateProduct();
 	animateQuestion();
+	animateWhyus();
+	animateContact();
+	/* animateFooter(); */
 
 
 })
@@ -158,7 +161,6 @@ function animateQuestion() {
 	const ElementText = document.querySelector('.question-text')
 	const ElementBtn = document.querySelector('.question-btn');
 	const ElementRect = ElementTitle.getBoundingClientRect(); 
-	console.log(ElementRect.top)
 	if (ElementRect.top <= 884) {
 
 		ElementTitle.classList.add('question-title-anim')
@@ -166,3 +168,48 @@ function animateQuestion() {
 		ElementBtn.classList.add('question-btn-anim')
 	}
 }
+
+function animateWhyus() {
+	const ElementTitle = document.querySelector('.whyus-title');
+	const ElementArticle = document.querySelectorAll('.whyus-article')
+	const ElementRect = ElementTitle.getBoundingClientRect(); 
+	if (ElementRect.top <= 800) {
+
+		ElementTitle.classList.add('whyus-title-anim')
+		ElementArticle.forEach(element => {
+			element.classList.add('whyus-article-anim')
+		});
+		
+	}
+}
+
+function animateContact() {
+	const ElementTitle = document.querySelector('.contact-title');
+	const ElementDiv = document.querySelectorAll('.contact-div')
+	const ElementImg = document.querySelector('.contact-img')
+
+	const ElementRect = ElementTitle.getBoundingClientRect(); 
+	
+	if (ElementRect.top <= 900) {
+
+		ElementTitle.classList.add('contact-title-anim')
+		ElementDiv.forEach(element => {
+			element.classList.add('contact-div-anim')
+			
+		});
+		ElementImg.classList.add('contact-img-anim')
+
+		
+	}
+}
+
+/* function animateFooter() {
+	const ElementFooter = document.querySelector('footer');
+	const ElementRect = ElementFooter.getBoundingClientRect(); 
+	console.log(ElementRect.top)
+	if (ElementRect.top <= 1070) {
+
+		ElementFooter.classList.add('footer-anim')
+		
+	}
+} */
