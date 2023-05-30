@@ -1,5 +1,4 @@
 let  imageSelector = 0;
-let animimageSelector = 0;
 const slides = [
 	{
 		"image":"slide1.jpg",
@@ -22,15 +21,28 @@ const slides = [
 
 export function selectImageRight(){
 
-    animimageSelector = imageSelector;
 	imageSelector===slides.length-1 ? imageSelector = 0 : imageSelector ++;
 }
 
 export function selectImageLeft(){
 
-    animimageSelector = imageSelector;
-	imageSelector === 0 ? imageSelector = slides.length-1 : imageSelector --;
+    imageSelector === 0 ? imageSelector = slides.length-1 : imageSelector --;
 }
+
+
+export function chargerImage() {
+    const parentElement = document.querySelector('.banner-div');
+    parentElement.innerHTML = ""
+    const currentImage = document.createElement("img");
+    currentImage.className = "banner-img"
+    const tagLine = document.createElement('p')
+    currentImage.src = `./assets/images/slideshow/${slides[imageSelector].image}`;
+    tagLine.innerHTML = slides[imageSelector].tagLine;
+    parentElement.appendChild(currentImage)
+    parentElement.appendChild(tagLine)
+    
+    
+};
 
 export function changerAnimImageRight() {
 	const parentElementAnim = document.querySelector('.animation-div')
@@ -38,32 +50,12 @@ export function changerAnimImageRight() {
 	const parentElement = document.querySelector('.banner-div');
 	parentElement.className ="reset-currentimgR banner-div"
 	void parentElementAnim.offsetWidth;
-	parentElementAnim.innerHTML = ""
-	const animImage = document.createElement("img");
-	animImage.className = "banner-img"
-	const animtagLine = document.createElement('p')
-	animImage.src = `./assets/images/slideshow/${slides[animimageSelector].image}`;
-	animtagLine.innerHTML = slides[animimageSelector].tagLine;
-	parentElementAnim.appendChild(animImage)
-	parentElementAnim.appendChild(animtagLine)
+	parentElementAnim.innerHTML = parentElement.innerHTML
 	parentElementAnim.className = "animation-animimgR animation-div"
 	parentElement.className ="animation-currentimgR banner-div"
 	
 };
 
-export function chargerImage() {
-	const parentElement = document.querySelector('.banner-div');
-	parentElement.innerHTML = ""
-	const currentImage = document.createElement("img");
-	currentImage.className = "banner-img"
-	const tagLine = document.createElement('p')
-	currentImage.src = `./assets/images/slideshow/${slides[imageSelector].image}`;
-	tagLine.innerHTML = slides[imageSelector].tagLine;
-	parentElement.appendChild(currentImage)
-	parentElement.appendChild(tagLine)
-	
-	
-};
 
 export function changerAnimImageLeft() {
 	const parentElementAnim = document.querySelector('.animation-div')
@@ -71,14 +63,7 @@ export function changerAnimImageLeft() {
 	const parentElement = document.querySelector('.banner-div');
 	parentElement.className ="reset-currentimgL banner-div"
 	void parentElementAnim.offsetWidth;
-	parentElementAnim.innerHTML = ""
-	const animImage = document.createElement("img");
-	animImage.className = "banner-img"
-	const animtagLine = document.createElement('p')
-	animImage.src = `./assets/images/slideshow/${slides[animimageSelector].image}`;
-	animtagLine.innerHTML = slides[animimageSelector].tagLine;
-	parentElementAnim.appendChild(animImage)
-	parentElementAnim.appendChild(animtagLine)
+	parentElementAnim.innerHTML = parentElement.innerHTML
 	parentElementAnim.className = "animation-animimgL animation-div"
 	parentElement.className ="animation-currentimgL banner-div"
 	

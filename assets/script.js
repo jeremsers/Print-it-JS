@@ -11,8 +11,8 @@ arrow_right.addEventListener("click", function () {
 	
 	
 	selectImageRight();
-	chargerImage();
 	changerAnimImageRight();
+	chargerImage();
 	changerPoints();
 	
 });
@@ -22,8 +22,8 @@ arrow_left.addEventListener("click", function () {
 	
 	
 	selectImageLeft();
-	chargerImage();
 	changerAnimImageLeft();
+	chargerImage();
 	changerPoints();
 	
 });
