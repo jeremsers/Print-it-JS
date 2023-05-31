@@ -43,8 +43,9 @@ arrow_left.addEventListener("click", function () {
 function changerImage() {
 	const currentImage = document.querySelector(".banner-img");
 	const tagLine = document.querySelector("#banner p");
+	
 	currentImage.src = `./assets/images/slideshow/${slides[imageSelector].image}`;
-	tagLine.innerHtml = slides[imageSelector].tagLine;
+	tagLine.innerHTML = slides[imageSelector].tagLine;
 	
 };
 
